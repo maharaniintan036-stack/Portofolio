@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aksila Intan Maharani | Portofolio</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:    { DEFAULT: '#1a2e4a', light: '#1e3a5f', dark: '#111e30' },
+            accent:  { DEFAULT: '#3b82f6', light: '#60a5fa', dark: '#1d4ed8' },
+            cream:   '#f8f9fb',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          animation: {
+            'fade-up':    'fadeUp 0.7s ease-out both',
+            'fade-in':    'fadeIn 0.6s ease-out both',
+            'slide-left': 'slideLeft 0.7s ease-out both',
+          },
+          keyframes: {
+            fadeUp:    { from: { opacity: 0, transform: 'translateY(30px)' }, to: { opacity: 1, transform: 'translateY(0)' } },
+            fadeIn:    { from: { opacity: 0 }, to: { opacity: 1 } },
+            slideLeft: { from: { opacity: 0, transform: 'translateX(-30px)' }, to: { opacity: 1, transform: 'translateX(0)' } },
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="bg-cream font-sans text-gray-800 antialiased">
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 bg-transparent">
+    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#home" class="text-white font-bold text-xl tracking-wide">
+        <span class="text-blue-400">A</span>ksila.
+      </a>
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex gap-8 text-sm font-medium text-white">
+        <li><a href="#about"     class="nav-link hover:text-blue-400 transition">Tentang</a></li>
+        <li><a href="#skills"    class="nav-link hover:text-blue-400 transition">Keahlian</a></li>
+        <li><a href="#projects"  class="nav-link hover:text-blue-400 transition">Proyek</a></li>
+        <li><a href="#education" class="nav-link hover:text-blue-400 transition">Pendidikan</a></li>
+        <li><a href="#contact"   class="nav-link hover:text-blue-400 transition">Kontak</a></li>
+      </ul>
+      <!-- Hamburger (mobile) -->
+      <button id="hamburger" class="md:hidden text-white text-2xl focus:outline-none">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-navy/95 backdrop-blur px-6 py-4 flex flex-col gap-4 text-sm font-medium text-white">
+      <a href="#about"     class="hover:text-blue-400">Tentang</a>
+      <a href="#skills"    class="hover:text-blue-400">Keahlian</a>
+      <a href="#projects"  class="hover:text-blue-400">Proyek</a>
+      <a href="#education" class="hover:text-blue-400">Pendidikan</a>
+      <a href="#contact"   class="hover:text-blue-400">Kontak</a>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="home" class="min-h-screen bg-gradient-to-br from-navy-dark via-navy to-navy-light flex items-center relative overflow-hidden">
+    <!-- Background decoration -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 -left-32 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl"></div>
+      <!-- Grid pattern -->
+      <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
+      <!-- Text -->
+      <div class="text-white animate-fade-up">
+        <p class="text-blue-400 font-medium tracking-widest text-sm mb-4 uppercase">👋 Halo, saya</p>
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
+          Aksila Intan<br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Maharani</span>
+        </h1>
+        <p class="text-blue-200 text-lg mb-2 font-medium">Mahasiswi Sistem Informasi</p>
+        <div class="flex items-center gap-2 text-gray-300 mb-8">
+          <span class="h-px w-8 bg-blue-400 inline-block"></span>
+          <span id="typewriter" class="text-blue-300 font-medium text-base"></span>
+        </div>
+        <p class="text-gray-300 leading-relaxed text-base mb-10 max-w-md">
+          Passionate dalam dunia teknologi informasi, analisis sistem, dan pengembangan web. Berfokus pada solusi digital yang berdampak nyata.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#projects" class="btn-primary px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-xl font-semibold text-sm transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-0.5">
+            Lihat Proyek <i class="fa-solid fa-arrow-down ml-2"></i>
+          </a>
+          <a href="assets/files/CV_Aksila_Intan_Maharani.pdf" download class="px-6 py-3 border border-blue-400/50 hover:border-blue-400 text-blue-300 hover:text-white rounded-xl font-semibold text-sm transition-all hover:bg-blue-400/10">
+            Unduh CV <i class="fa-solid fa-download ml-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Avatar / Photo -->
+      <div class="flex justify-center animate-fade-in" style="animation-delay:0.3s">
+        <div class="relative">
+          <!-- Glow ring -->
+          <div class="absolute -inset-2 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 blur opacity-40 animate-pulse"></div>
+          <!-- Photo container -->
+          <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-400/50 shadow-2xl">
+            <img id="profile-img" src="assets/img/profile.jpg" alt="Aksila Intan Maharani"
+                 class="w-full h-full object-cover"
+                 onerror="this.style.display='none'; document.getElementById('profile-placeholder').style.display='flex'"/>
+            <!-- Placeholder jika foto belum ada -->
+            <div id="profile-placeholder" class="w-full h-full bg-gradient-to-br from-navy to-blue-900 items-center justify-center text-center" style="display:flex">
+              <div>
+                <i class="fa-solid fa-user text-blue-300 text-7xl mb-3"></i>
+                <p class="text-blue-300/70 text-xs">Upload foto ke<br/>assets/img/profile.jpg</p>
+              </div>
+            </div>
+          </div>
+          <!-- Floating badge -->
+          <div class="absolute -bottom-2 -right-2 bg-white rounded-2xl px-3 py-2 shadow-xl flex items-center gap-2">
+            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            <span class="text-navy text-xs font-semibold">Available</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <a href="#about" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 hover:text-white animate-bounce transition">
+      <i class="fa-solid fa-chevron-down text-xl"></i>
+    </a>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-header text-center mb-16 reveal">
+        <p class="text-blue-500 font-semibold text-sm uppercase tracking-widest mb-2">Siapa Saya</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-navy">Tentang Saya</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <!-- Info Cards -->
+        <div class="grid grid-cols-2 gap-4 reveal">
+          <div class="info-card bg-navy rounded-2xl p-6 text-center text-white shadow-lg hover:-translate-y-1 transition-transform">
+            <div class="text-3xl font-bold text-blue-400 mb-1">7</div>
+            <div class="text-sm text-gray-300">Semester Aktif</div>
+          </div>
+          <div class="info-card bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-6 text-center text-white shadow-lg hover:-translate-y-1 transition-transform">
+            <div class="text-3xl font-bold mb-1">SI</div>
+            <div class="text-sm text-blue-100">Sistem Informasi</div>
+          </div>
+          <div class="info-card col-span-2 bg-cream border border-gray-100 rounded-2xl p-6 shadow hover:-translate-y-1 transition-transform">
+            <p class="text-gray-600 leading-relaxed text-sm">
+              Saya adalah mahasiswi Sistem Informasi semester 7 yang memiliki ketertarikan pada analisis sistem, pengembangan web, dan riset teknologi informasi. Saya percaya bahwa teknologi yang baik harus dapat dirasakan manfaatnya secara nyata oleh penggunanya.
+            </p>
+          </div>
+        </div>
+
+        <!-- Personal Info List -->
+        <div class="reveal space-y-5">
+          <h3 class="text-xl font-bold text-navy mb-6">Informasi Personal</h3>
+          <div class="info-row flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50 transition">
+            <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-user text-blue-600 text-sm"></i>
+            </div>
+            <div>
+              <div class="text-xs text-gray-400 mb-0.5">Nama Lengkap</div>
+              <div class="font-semibold text-navy text-sm">Aksila Intan Maharani</div>
+            </div>
+          </div>
+          <div class="info-row flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50 transition">
+            <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-graduation-cap text-blue-600 text-sm"></i>
+            </div>
+            <div>
+              <div class="text-xs text-gray-400 mb-0.5">Program Studi</div>
+              <div class="font-semibold text-navy text-sm">Sarjana Sistem Informasi</div>
+            </div>
+          </div>
+          <div class="info-row flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50 transition">
+            <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-building-columns text-blue-600 text-sm"></i>
+            </div>
+            <div>
+              <div class="text-xs text-gray-400 mb-0.5">Universitas</div>
+              <div class="font-semibold text-navy text-sm">Universitas IPWIJA</div>
+            </div>
+          </div>
+          <div class="info-row flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50 transition">
+            <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-location-dot text-blue-600 text-sm"></i>
+            </div>
+            <div>
+              <div class="text-xs text-gray-400 mb-0.5">Lokasi</div>
+              <div class="font-semibold text-navy text-sm">Bogor, Indonesia</div>
+            </div>
+          </div>
+          <div class="info-row flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50 transition">
+            <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-envelope text-blue-600 text-sm"></i>
+            </div>
+            <div>
+              <div class="text-xs text-gray-400 mb-0.5">Email</div>
+              <div class="font-semibold text-navy text-sm">maharaniintan036@gmail.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section id="skills" class="py-24 bg-cream">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-header text-center mb-16 reveal">
+        <p class="text-blue-500 font-semibold text-sm uppercase tracking-widest mb-2">Yang Saya Kuasai</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-navy">Keahlian</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Tech Skills -->
+        <div class="skill-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100 reveal hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+            <i class="fa-solid fa-code text-blue-600 text-xl"></i>
+          </div>
+          <h3 class="font-bold text-navy text-lg mb-5">Teknis / Programming</h3>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-sm mb-1.5"><span class="text-gray-600 font-medium">HTML & CSS</span><span class="text-blue-600 font-semibold">85%</span></div>
+              <div class="h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-blue-500 to-blue-400 rounded-full skill-bar" data-w="85%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1.5"><span class="text-gray-600 font-medium">JavaScript</span><span class="text-blue-600 font-semibold">70%</span></div>
+              <div class="h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-blue-500 to-blue-400 rounded-full skill-bar" data-w="70%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1.5"><span class="text-gray-600 font-medium">PHP / MySQL</span><span class="text-blue-600 font-semibold">65%</span></div>
+              <div class="h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-blue-500 to-blue-400 rounded-full skill-bar" data-w="65%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1.5"><span class="text-gray-600 font-medium">Python</span><span class="text-blue-600 font-semibold">55%</span></div>
+              <div class="h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-blue-500 to-blue-400 rounded-full skill-bar" data-w="55%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100 reveal hover:shadow-md transition-shadow" style="animation-delay:0.15s">
+          <div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center mb-6">
+            <i class="fa-solid fa-wrench text-cyan-600 text-xl"></i>
+          </div>
+          <h3 class="font-bold text-navy text-lg mb-5">Tools & Software</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag">VS Code</span>
+            <span class="tag">Figma</span>
+            <span class="tag">google apps script</span>
+            <span class="tag">Mendeley</span>
+            <span class="tag">MS Office</span>
+            <span class="tag">Canva</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Google Colab</span>
+            <span class="tag">draw.io</span>
+            <span class="tag">Turnitin</span>
+          </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="skill-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100 reveal hover:shadow-md transition-shadow" style="animation-delay:0.3s">
+          <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+            <i class="fa-solid fa-brain text-purple-600 text-xl"></i>
+          </div>
+          <h3 class="font-bold text-navy text-lg mb-5">Soft Skills</h3>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-check-circle text-blue-500 text-sm"></i>
+              <span class="text-gray-600 text-sm">Analisis & Riset Ilmiah</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-check-circle text-blue-500 text-sm"></i>
+              <span class="text-gray-600 text-sm">Problem Solving</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-check-circle text-blue-500 text-sm"></i>
+              <span class="text-gray-600 text-sm">Manajemen Waktu</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-check-circle text-blue-500 text-sm"></i>
+              <span class="text-gray-600 text-sm">Kerja Tim & Kolaborasi</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-check-circle text-blue-500 text-sm"></i>
+              <span class="text-gray-600 text-sm">Komunikasi & Presentasi</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-check-circle text-blue-500 text-sm"></i>
+              <span class="text-gray-600 text-sm">Penulisan Ilmiah</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section id="projects" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-header text-center mb-16 reveal">
+        <p class="text-blue-500 font-semibold text-sm uppercase tracking-widest mb-2">Karya Saya</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-navy">Proyek</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Project Card 1 -->
+        <div class="project-card bg-cream rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-2 reveal">
+          <div class="h-48 bg-gradient-to-br from-navy to-blue-700 flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+            <i class="fa-solid fa-magnifying-glass-chart text-white text-5xl opacity-60"></i>
+          </div>
+          <div class="p-6">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="badge">WebQual 4.0</span>
+              <span class="badge">IPA</span>
+              <span class="badge">Riset</span>
+            </div>
+            <h3 class="font-bold text-navy text-base mb-2">Analisis Kualitas Web OPAC Perpustakaan</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-5">Menganalisis kualitas layanan Web OPAC Sekolah Alam Cikeas menggunakan metode WebQual 4.0 dan Importance-Performance Analysis (IPA).</p>
+            <div class="flex gap-3">
+              <a href="#" class="btn-sm flex items-center gap-2 text-xs font-semibold text-blue-600 hover:text-blue-700 transition">
+                <i class="fa-solid fa-book-open"></i> Detail
+              </a>
+              <a href="#" class="btn-sm flex items-center gap-2 text-xs font-semibold text-gray-500 hover:text-gray-700 transition">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="project-card bg-cream rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-2 reveal" style="animation-delay:0.15s">
+          <div class="h-48 bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+            <i class="fa-solid fa-globe text-white text-5xl opacity-60"></i>
+          </div>
+          <div class="p-6">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="badge">HTML</span>
+              <span class="badge">CSS</span>
+              <span class="badge">JavaScript</span>
+            </div>
+            <h3 class="font-bold text-navy text-base mb-2">Website Portofolio Pribadi</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-5">Website portofolio responsif yang menampilkan profil, keahlian, proyek, dan informasi kontak dengan desain modern berbasis Tailwind CSS.</p>
+            <div class="flex gap-3">
+              <a href="#" class="btn-sm flex items-center gap-2 text-xs font-semibold text-blue-600 hover:text-blue-700 transition">
+                <i class="fa-solid fa-eye"></i> Live Demo
+              </a>
+              <a href="#" class="btn-sm flex items-center gap-2 text-xs font-semibold text-gray-500 hover:text-gray-700 transition">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 3 (placeholder) -->
+        <div class="project-card bg-cream rounded-2xl overflow-hidden border-2 border-dashed border-gray-200 flex items-center justify-center min-h-[360px] reveal hover:border-blue-300 transition-colors" style="animation-delay:0.3s">
+          <div class="text-center text-gray-400 p-8">
+            <i class="fa-solid fa-plus-circle text-4xl mb-3 text-gray-300"></i>
+            <p class="font-semibold text-sm">Proyek Berikutnya</p>
+            <p class="text-xs mt-1">Segera hadir...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EDUCATION ===================== -->
+  <section id="education" class="py-24 bg-cream">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-header text-center mb-16 reveal">
+        <p class="text-blue-500 font-semibold text-sm uppercase tracking-widest mb-2">Riwayat Belajar</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-navy">Pendidikan</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded mx-auto mt-4"></div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="relative max-w-3xl mx-auto">
+        <!-- Line -->
+        <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-blue-100 hidden md:block"></div>
+
+        <!-- Item 1 -->
+        <div class="relative flex gap-8 mb-10 reveal">
+          <div class="flex-shrink-0 w-16 h-16 bg-navy rounded-2xl flex items-center justify-center z-10 shadow-lg">
+            <i class="fa-solid fa-graduation-cap text-blue-400 text-xl"></i>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex-1 hover:shadow-md transition-shadow">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <h3 class="font-bold text-navy">Universitas IPWIJA</h3>
+              <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">2023 – Sekarang</span>
+            </div>
+            <p class="text-blue-600 font-semibold text-sm mb-2">S1 Sistem Informasi – Fakultas Sains dan Kesehatan</p>
+            <p class="text-gray-500 text-sm leading-relaxed">Fokus studi pada analisis sistem informasi, pengembangan perangkat lunak, dan riset teknologi. Sedang menyusun skripsi mengenai evaluasi kualitas layanan Web OPAC menggunakan metode WebQual 4.0 & IPA.</p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="relative flex gap-8 mb-10 reveal" style="animation-delay:0.15s">
+          <div class="flex-shrink-0 w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center z-10 shadow-lg">
+            <i class="fa-solid fa-school text-white text-xl"></i>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex-1 hover:shadow-md transition-shadow">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <h3 class="font-bold text-navy">SMK / Sederajat</h3>
+              <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">2019 – 2022</span>
+            </div>
+            <p class="text-blue-600 font-semibold text-sm mb-2">Jurusan Teknik Komputer & Jaringan</p>
+            <p class="text-gray-500 text-sm leading-relaxed">Menyelesaikan pendidikan menengah atas dengan prestasi akademik yang baik. Aktif dalam kegiatan organisasi dan ekstrakurikuler yang mengembangkan kemampuan kepemimpinan dan kerja sama tim.</p>
+          </div>
+        </div>
+
+        <!-- Sertifikat / Pelatihan -->
+        <div class="relative flex gap-8 reveal" style="animation-delay:0.3s">
+          <div class="flex-shrink-0 w-16 h-16 bg-cyan-500 rounded-2xl flex items-center justify-center z-10 shadow-lg">
+            <i class="fa-solid fa-certificate text-white text-xl"></i>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex-1 hover:shadow-md transition-shadow">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <h3 class="font-bold text-navy">Sertifikasi & Pelatihan</h3>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center gap-3 text-sm">
+                <i class="fa-solid fa-award text-yellow-500"></i>
+                <span class="text-gray-600">Web Development Fundamentals — <em class="text-gray-400">2024</em></span>
+              </div>
+              <div class="flex items-center gap-3 text-sm">
+                <i class="fa-solid fa-award text-yellow-500"></i>
+                <span class="text-gray-600">Data Analysis with Python — <em class="text-gray-400">2024</em></span>
+              </div>
+              <div class="flex items-center gap-3 text-sm">
+                <i class="fa-solid fa-award text-yellow-500"></i>
+                <span class="text-gray-600">UI/UX Design Essentials — <em class="text-gray-400">2025</em></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="py-24 bg-gradient-to-br from-navy-dark via-navy to-navy-light relative overflow-hidden">
+    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-6 relative">
+      <div class="section-header text-center mb-16 reveal">
+        <p class="text-blue-400 font-semibold text-sm uppercase tracking-widest mb-2">Hubungi Saya</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">Kontak</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 rounded mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left: CTA text + social links -->
+        <div class="text-white reveal">
+          <h3 class="text-2xl font-bold mb-4">Mari Terhubung! 👋</h3>
+          <p class="text-gray-300 leading-relaxed mb-8">
+            Terbuka untuk diskusi, kolaborasi proyek, maupun peluang internship. Jangan ragu untuk menghubungi saya melalui salah satu platform berikut.
+          </p>
+
+          <!-- Contact info -->
+          <div class="space-y-4 mb-10">
+            <a href="mailto:maharaniintan036@gmail.com" class="contact-item flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
+              <div class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fa-solid fa-envelope text-white text-sm"></i>
+              </div>
+              <div>
+                <div class="text-xs text-gray-400 mb-0.5">Email</div>
+                <div class="font-semibold text-sm">maharaniintan036@gmail.com</div>
+              </div>
+            </a>
+            <a href="https://wa.me/6285786702073" target="_blank" class="contact-item flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
+              <div class="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fa-brands fa-whatsapp text-white text-sm"></i>
+              </div>
+              <div>
+                <div class="text-xs text-gray-400 mb-0.5">WhatsApp</div>
+                <div class="font-semibold text-sm">+62 857 8670 2073</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Social Media -->
+          <div>
+            <p class="text-gray-400 text-sm mb-4">Temukan saya di:</p>
+            <div class="flex gap-3">
+              <a href="#" class="social-btn w-11 h-11 bg-white/10 hover:bg-blue-600 rounded-xl flex items-center justify-center transition-all hover:-translate-y-1 text-white" title="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="social-btn w-11 h-11 bg-white/10 hover:bg-gray-800 rounded-xl flex items-center justify-center transition-all hover:-translate-y-1 text-white" title="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="#" class="social-btn w-11 h-11 bg-white/10 hover:bg-pink-600 rounded-xl flex items-center justify-center transition-all hover:-translate-y-1 text-white" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Quick contact card -->
+        <div class="bg-white rounded-3xl p-8 shadow-2xl reveal" style="animation-delay:0.2s">
+          <h3 class="font-bold text-navy text-xl mb-6">Kirim Pesan Cepat</h3>
+          <form id="contact-form" class="space-y-4" onsubmit="handleForm(event)">
+            <div>
+              <label class="block text-sm font-medium text-gray-600 mb-1.5">Nama</label>
+              <input type="text" placeholder="Nama kamu..." required
+                     class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100 outline-none text-sm transition"/>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-600 mb-1.5">Email</label>
+              <input type="email" placeholder="email@kamu.com" required
+                     class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100 outline-none text-sm transition"/>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-600 mb-1.5">Pesan</label>
+              <textarea rows="4" placeholder="Tuliskan pesanmu di sini..." required
+                        class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100 outline-none text-sm transition resize-none"></textarea>
+            </div>
+            <button type="submit"
+                    class="w-full py-3 bg-navy hover:bg-navy-light text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5 text-sm">
+              Kirim Pesan <i class="fa-solid fa-paper-plane ml-2"></i>
+            </button>
+          </form>
+          <p id="form-msg" class="hidden text-center text-green-600 font-medium text-sm mt-4">
+            ✅ Pesan terkirim! Terima kasih sudah menghubungi.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-navy-dark text-center py-8">
+    <p class="text-gray-400 text-sm">
+      Dibuat dengan <span class="text-red-400">♥</span> oleh
+      <span class="text-white font-semibold">Aksila Intan Maharani</span>
+      &copy; <span id="year"></span>
+    </p>
+    <p class="text-gray-600 text-xs mt-1">HTML · CSS · JavaScript · Tailwind CSS</p>
+  </footer>
+
+  <!-- Scroll-to-top button -->
+  <button id="scroll-top"
+          class="fixed bottom-6 right-6 w-12 h-12 bg-blue-500 hover:bg-blue-600 text-white rounded-xl shadow-lg flex items-center justify-center transition-all opacity-0 pointer-events-none hover:-translate-y-1 z-50">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
